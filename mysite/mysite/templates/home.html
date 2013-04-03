@@ -2,22 +2,27 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<title>无标题文档</title>
+<title>涓婚〉</title>
 </head>
 
 <body>
 <div style="border-bottom:#FF0000 solid 2px; height: 100px;" align="right" >
-	<a href=".">登录</a>
+	{% if not isLogin %}
+		<a href="./login">鐧诲綍</a>
+	{% else %}
+		<label>{{ username }}</label>
+		<a href="./logout">閫�鍑�</a>
+	{% endif %}
+	<br />
+	<a href="./publish">鍙戝竷闂</a>
 </div>
-	<ul>
+<div align="center">
+<ul>
 		<li>a</li>
-		<li>b</li>
-		<li>c</li>
-		<li>d</li>
-		<li>e</li>
-		<li>f</li>
+		{% for item in question %}
+			<li>item.title</li>
+		{% endfor %}
 	</ul>
-<div>
 </div>
 </body>
 </html>

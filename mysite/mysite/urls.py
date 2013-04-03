@@ -1,6 +1,10 @@
 from django.conf.urls import patterns, include, url
 from mysite.view import current_datetime
-from mysite.view import _home
+from mysite.view import home
+from mysite.view import login
+from mysite.view import login_to_home
+from mysite.view import logout
+from mysite.view import publish
 from books.views import search
 
 # Uncomment the next two lines to enable the admin:
@@ -18,6 +22,11 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     # url(r'^admin/', include(admin.site.urls)),
     (r'^time$',current_datetime),
-    (r'^home$',_home),
+    (r'^home$',home),
     (r'^search$',search),
+	(r'^login$',login),
+	(r'^login_to_home$',login_to_home),
+	(r'^logout$',logout),
+	(r'^$',home),
+	(r'^publish$',publish),
 )
